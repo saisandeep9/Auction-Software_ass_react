@@ -27,11 +27,6 @@ class Login extends Validation {
     if (success) {
       window.location = "/welcome";
     }
-    //   const success = await userService.register(this.state.data);
-    //   console.log("data", this.state.data);
-    //   if (success) {
-    //     window.location = "/signup";
-    //   }
   };
 
   render() {
@@ -39,7 +34,10 @@ class Login extends Validation {
     return (
       <div className="row m-5">
         <div className="col-8 text-center">
-          <h2 className="">welcome E-commerce website</h2>
+          <h2 className="">Welcome To Auction Software</h2>
+          <h3 className="">
+            log in id :-admin@gmail.com {<br />}password:-password
+          </h3>
         </div>
 
         <div className="col-4 " style={{ width: "60%" }}>

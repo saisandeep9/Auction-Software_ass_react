@@ -4,8 +4,8 @@ class Welcome extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <h1>Welcome </h1>
+      <div className="container m-2">
+        <h1> Welcome To Auction Software</h1>
       </div>
     );
   }

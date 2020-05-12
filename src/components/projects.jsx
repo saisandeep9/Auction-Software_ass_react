@@ -52,40 +52,47 @@ class Projects extends Component {
 
     return (
       <div className="container mt-3">
-        <table className="table  ">
-          <thead className="App-nav  ">
-            <tr>
-              <th
-                style={{ cursor: "pointer" }}
-                onClick={() => this.handleSort("projectTitle")}
-              >
-                Project Title <i> {this.getSortIcon("projectTitle")}</i>
-              </th>
-              <th
-                style={{ cursor: "pointer" }}
-                onClick={() => this.handleSort("user.name")}
-              >
-                User Name <i> {this.getSortIcon("user.name")}</i>
-              </th>
-              <th
-                style={{ cursor: "pointer" }}
-                onClick={() => this.handleSort("category.categoryName")}
-              >
-                Category Name
-                <i> {this.getSortIcon("category.categoryName")}</i>
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-color ">
-            {projects.map((project) => (
-              <tr key={project._id} className="mouse-hover">
-                <td>{project.projectTitle}</td>
-                <td>{project.user.name} </td>
-                <td>{project.category.categoryName} </td>
+        {this.state.Projects.length !== 0 ? (
+          <table className="table  ">
+            <thead className="App-nav  ">
+              <tr>
+                <th
+                  style={{ cursor: "pointer" }}
+                  onClick={() => this.handleSort("projectTitle")}
+                >
+                  Project Title <i> {this.getSortIcon("projectTitle")}</i>
+                </th>
+                <th
+                  style={{ cursor: "pointer" }}
+                  onClick={() => this.handleSort("user.name")}
+                >
+                  User Name <i> {this.getSortIcon("user.name")}</i>
+                </th>
+                <th
+                  style={{ cursor: "pointer" }}
+                  onClick={() => this.handleSort("category.categoryName")}
+                >
+                  Category Name
+                  <i> {this.getSortIcon("category.categoryName")}</i>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="text-color ">
+              {projects.map((project) => (
+                <tr key={project._id} className="mouse-hover">
+                  <td>{project.projectTitle}</td>
+                  <td>{project.user.name} </td>
+                  <td>{project.category.categoryName} </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div>
+            <h1>Welcome to Home page </h1>
+            <h3>please wait table is loading or check the DB connection</h3>
+          </div>
+        )}
       </div>
     );
   }
